@@ -395,10 +395,13 @@ socket.on('game_update', function(payload){
 
                 /* Set up interactivity */
                 $('#'+row+'_'+column).off('click');
-                $('#'+row+'_'+column).removeClass('hovered_over'); 
+                $('#'+row+'_'+column).removeClass('hovered_over');
+                $('#'+row+'_'+column).removeClass('hovered_over_invalid');
                 
                 if(payload.game.whose_turn === my_color){
+                    $('#'+row+'_'+column).addClass('hovered_over_invalid');
                     if(payload.game.legal_moves[row][column] === my_color.substr(0,1)){
+                        $('#'+row+'_'+column).removeClass('hovered_over_invalid');
                         $('#'+row+'_'+column).addClass('hovered_over');
                         $('#'+row+'_'+column).click(function(r,c){
                             return function(){

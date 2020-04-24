@@ -24,3 +24,8 @@ td.hovered_over:hover {
     background: url('../images/hover.gif');
     background-size: 100% 100%;
 }
+
+td.hovered_over_invalid:hover {
+    background: url('../images/invalid.gif');
+    background-size: 100% 100%;
+}
